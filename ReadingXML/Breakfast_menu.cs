@@ -7,9 +7,15 @@ using System.Xml.Serialization;
 
 namespace ReadingXML
 {
+    [Serializable]
     public class Breakfast_menu
     {
         [XmlElement(ElementName = "food")]
-        public List<Food> Food { get; set; }
+        public Food[] Food { get; set; }
+
+        public Breakfast_menu(Food[] food)
+        {
+            Food = food;
+        }
     }
 }
